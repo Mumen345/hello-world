@@ -58,7 +58,7 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 100px;
+  gap: 15%;
   align-items: center;
   padding: 20px 0;
   background: #00000019;
@@ -97,7 +97,7 @@ a {
   top: 0;
   left: 0;
   background-color: #ffffff;
-  background-color: #000000e6;
+  background-color: #000000;
   overflow-x: hidden;
   transition: 0.5s;
 }
@@ -126,8 +126,8 @@ a {
 
 .overlay .closebtn {
   position: absolute;
-  top: 0px;
-  right: 45px;
+  top: -20px;
+  right: 20px;
   font-size: 50px;
 }
 @media screen and (max-width: 1080px) {

@@ -1,6 +1,6 @@
 <template>
-  <div v-motion-pop-visible-once :delay="700" class="hiw_container">
-    <div class="hiw_writeup_div">
+  <div class="hiw_container">
+    <div v-motion-slide-visible-once-left :delay="700" class="hiw_writeup_div">
       <div>
         <p class="HIW_text">How it works</p>
       </div>
@@ -37,7 +37,7 @@
         </div>
       </div>
     </div>
-    <div>
+    <div v-motion-slide-visible-once-right :delay="700">
       <img
         alt="Hero Img"
         class="img_responsive"
