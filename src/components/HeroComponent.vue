@@ -124,7 +124,7 @@ span {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 15%;
+  gap: 30px;
   margin-top: 30px;
 }
 
@@ -233,7 +233,7 @@ span {
     text-align: center;
   }
   .button_div {
-    width: 100%;
+    width: 80% !important;
     display: flex !important;
     flex-direction: column !important;
     gap: 30px;
@@ -288,7 +288,7 @@ span {
     display: flex;
     width: 100% !important;
     margin: 20% auto;
-    padding: 0 20px;
+    padding: 0;
   }
 }
 </style>
