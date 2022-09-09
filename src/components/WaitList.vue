@@ -20,7 +20,6 @@
           <input
             id="email"
             v-model="selected.email"
-            @blur="validateEmail"
             type="email"
             required
             class=""
@@ -67,12 +66,10 @@ export default {
     };
   },
   methods: {
-    validateEmail() {
-      if (/^\w+([-]?\w+)*@\w+([-]?\w+)*(\w{2,3})+$/.test(this.selected.email)) {
-        this.msg["email"] = "Please enter a valid email address";
-      } else {
-        this.msg["email"] = "";
-      }
+    validateEmail(email) {
+      const re =
+        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))*$/;
+      return re.test(email);
     },
 
     submitForm() {
@@ -80,12 +77,18 @@ export default {
         this.$toasted.error("Please fill your name");
         return false;
       }
+
       if (this.selected.email === "") {
         this.$toasted.error("Please fill your email");
         return false;
       }
+      if (!this.validateEmail(this.selected.email)) {
+        this.$toasted.error("Please enter a valid email");
+        return false;
+      }
+
       if (this.selected.owner === "") {
-        this.$toasted.error("Please select which you'd prefer");
+        this.$toasted.error("You've not selected your preference");
         return false;
       }
       if (this.selected.email === this.validateEmail) {
