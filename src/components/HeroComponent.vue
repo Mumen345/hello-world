@@ -9,8 +9,7 @@
         <span class="forth_text">on the go...</span>
       </p>
       <p class="hero_subtext">
-        Greach a Ride with a Trusted Community of Friends and Working
-        Professionals
+        We create a network that enables verified passengers to book empty seats in cars owned by verified drivers heading the same route while providing the affordability of a public bus and the comfort of a private car.
       </p>
       <div class="button_div">
         <button class="primary_button">Download App</button>

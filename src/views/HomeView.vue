@@ -6,9 +6,9 @@
     </div>
     <HowitWorks />
     <DownloadComponent />
-    <FaqComponent />
-    <WaitList />
     <AmbassadorComponent />
+    <WaitList />
+    <FaqComponent />
     <FooterComponent />
   </div>
 </template>

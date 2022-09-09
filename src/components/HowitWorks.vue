@@ -8,10 +8,10 @@
         <div class="hiw_section_text">
           <img alt="Hero Img" class="logo" src="@/assets/icon.svg" />
           <div class="hiw_text_div">
-            <p class="hiw_section_title">Downoad and Register</p>
+            <p class="hiw_section_title">Download and Sign up</p>
             <p class="hiw_section_subtext">
-              This software is very easy for you to manage. You can use it as
-              you wish
+              Download on IOS or App store. Fill in your basic details. Get
+              started.
             </p>
           </div>
         </div>
@@ -20,8 +20,8 @@
           <div class="hiw_text_div">
             <p class="hiw_section_title">Book a Ride</p>
             <p class="hiw_section_subtext">
-              This software is very easy for you to manage. You can use it as
-              you wish
+              Schedule a trip. Connect with verified drivers heading your route.
+              Save cost
             </p>
           </div>
         </div>
@@ -30,8 +30,8 @@
           <div class="hiw_text_div">
             <p class="hiw_section_title">Offer a Ride</p>
             <p class="hiw_section_subtext">
-              This software is very easy for you to manage. You can use it as
-              you wish
+              Fill up your empty car seats. Pick up verified riders along your
+              route. Save cost
             </p>
           </div>
         </div>

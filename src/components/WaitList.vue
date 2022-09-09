@@ -2,7 +2,7 @@
   <div class="waitlist_container">
     <div class="form">
       <p class="form_header">Join our Wait List</p>
-      <form class="form_input" action="">
+      <form class="form_input" @submit.prevent="register">
         <div>
           <label for="name">*Name:</label>
           <br />
@@ -20,6 +20,7 @@
           <input
             id="email"
             v-model="selected.email"
+            @blur="validateEmail"
             type="email"
             required
             class=""
@@ -39,19 +40,22 @@
         <div>
           <label for="pow">*Which would you prefer</label>
           <select id="pow" v-model="selected.owner">
-            <option disabled>Please select one</option>
+            <option disabled value="">Please select one</option>
             <option>Driver</option>
             <option>Rider</option>
             <option>Both</option>
           </select>
         </div>
-        <button class="primary_button">Join</button>
+        <button @click.prevent="submitForm" class="primary_button">Join</button>
       </form>
     </div>
   </div>
 </template>
 <script>
+import axios from "axios";
+
 export default {
+  name: "WaitList",
   data() {
     return {
       selected: {
@@ -61,6 +65,49 @@ export default {
         owner: "",
       },
     };
+  },
+  methods: {
+    validateEmail() {
+      if (/^\w+([-]?\w+)*@\w+([-]?\w+)*(\w{2,3})+$/.test(this.selected.email)) {
+        this.msg["email"] = "Please enter a valid email address";
+      } else {
+        this.msg["email"] = "";
+      }
+    },
+
+    submitForm() {
+      if (this.selected.name === "") {
+        this.$toasted.error("Please fill your name");
+        return false;
+      }
+      if (this.selected.email === "") {
+        this.$toasted.error("Please fill your email");
+        return false;
+      }
+      if (this.selected.owner === "") {
+        this.$toasted.error("Please select which you'd prefer");
+        return false;
+      }
+      if (this.selected.email === this.validateEmail) {
+        this.$toasted.error("email not correct");
+        return false;
+      }
+      axios
+        .post("https://jsonplaceholder.typicode.com/posts", this.selected)
+        .then((response) => {
+          console.log(response.status);
+          if (response.status === 201) {
+            this.$toasted.success("Success! Thank you for your Response");
+            this.selected = "";
+          } else {
+            this.$toasted.error("opps, an error occured. Try again");
+            return false;
+          }
+        });
+    },
+    register() {
+      this.errors = {};
+    },
   },
 };
 </script>
