@@ -7,39 +7,21 @@
         <div>
           <label for="name">*Name:</label>
           <br />
-          <input
-            id="name"
-            v-model="selected.name"
-            required
-            type="text"
-            class=""
-          />
+          <input id="name" v-model="name" required type="text" class="" />
         </div>
         <div>
           <label for="email">*Email :</label>
           <br />
-          <input
-            id="email"
-            v-model="selected.email"
-            type="email"
-            required
-            class=""
-          />
+          <input id="email" v-model="email" type="email" required class="" />
         </div>
         <div>
           <label for="work">Where do you work :</label>
           <br />
-          <input
-            id="work"
-            v-model="selected.work"
-            required
-            type="text"
-            class=""
-          />
+          <input id="work" v-model="company" required type="text" class="" />
         </div>
         <div>
           <label for="pow">*Which would you prefer</label>
-          <select id="pow" v-model="selected.owner">
+          <select id="pow" v-model="role">
             <option disabled value="">Please select one</option>
             <option>Driver</option>
             <option>Rider</option>
@@ -58,12 +40,10 @@ export default {
   name: "WaitList",
   data() {
     return {
-      selected: {
-        name: "",
-        email: "",
-        work: "",
-        owner: "",
-      },
+      name: "",
+      email: "",
+      company: "",
+      role: "",
     };
   },
   methods: {
@@ -74,35 +54,45 @@ export default {
     },
 
     submitForm() {
-      if (this.selected.name === "") {
+      if (this.name === "") {
         this.$toasted.error("Please fill your name");
         return false;
       }
 
-      if (this.selected.email === "") {
+      if (this.email === "") {
         this.$toasted.error("Please fill your email");
         return false;
       }
-      if (!this.validateEmail(this.selected.email)) {
+      if (!this.validateEmail(this.email)) {
         this.$toasted.error("Please enter a valid email");
         return false;
       }
 
-      if (this.selected.owner === "") {
+      if (this.role === "") {
         this.$toasted.error("You've not selected your preference");
         return false;
       }
-      if (this.selected.email === this.validateEmail) {
+      if (this.email === this.validateEmail) {
         this.$toasted.error("email not correct");
         return false;
       }
+
       axios
-        .post("https://jsonplaceholder.typicode.com/posts", this.selected)
+        .get(
+          "http://3.85.252.84/docs#/waitlist/add_to_waitlist_api_v1_waitlist__post",
+          this.name,
+          this.email,
+          this.role,
+          this.company
+        )
         .then((response) => {
           console.log(response.status);
-          if (response.status === 201) {
+          if (response.status === 200) {
             this.$toasted.success("Success! Thank you for your Response");
-            this.selected = "";
+            (this.name = ""),
+              (this.email = ""),
+              (this.role = ""),
+              (this.company = "");
           } else {
             this.$toasted.error("opps, an error occured. Try again");
             return false;
