@@ -8,11 +8,25 @@
       <div>
         <p class="ambassador_header">Be a Greach Ambassador</p>
         <p class="ambassador_subtext">
-          Interested in being our Ambassador at your workplace? Sign-up your
-          colleagues and get 10% off the cost of each of their first Greach ride
+          Interested in being our Ambassador at your workplace? Get free gifts
+          and bonuses when you sign-up your colleagues
         </p>
       </div>
-      <button class="primary_button">I'm Interested</button>
+      <div class="emailDiv" v-if="inputDiv">
+        <label for="email">*Email :</label>
+        <br />
+        <input id="email" type="email" v-model="email" required class="" />
+        <button @click.prevent="submitForm" class="primary_button">
+          Submit
+        </button>
+      </div>
+      <button
+        v-if="mainButton"
+        @click.prevent="showInput"
+        class="primary_button"
+      >
+        I'm Interested
+      </button>
     </div>
     <img
       v-motion-slide-visible-once-right
@@ -24,9 +38,74 @@
   </div>
 </template>
 <script>
-export default {};
+import axios from "axios";
+export default {
+  name: "AmbassadorComponent",
+  data() {
+    return {
+      email: "",
+      inputDiv: false,
+      mainButton: true,
+    };
+  },
+  methods: {
+    validateEmail(email) {
+      const re =
+        /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))*$/;
+      return re.test(email);
+    },
+    submitForm() {
+      if (this.email === "") {
+        this.$toasted.error("Please fill your email");
+        return false;
+      }
+      if (this.email === this.validateEmail) {
+        this.$toasted.error("Invalid email address");
+        return false;
+      }
+      axios
+        .post("https://jsonplaceholder.typicode.com/posts", this.email)
+        .then((response) => {
+          console.log(response.status);
+          if (response.status === 201) {
+            this.$toasted.success("Success! Thank you for your Response");
+            this.email = "";
+          } else {
+            this.$toasted.error("opps, an error occured. Try again");
+            return false;
+          }
+        });
+    },
+    showInput() {
+      this.inputDiv = true;
+      this.mainButton = false;
+    },
+  },
+};
 </script>
 <style scoped>
+.emailDiv {
+  width: 100%;
+}
+input {
+  background-color: transparent;
+  border: 1px solid #d1d1d1;
+  width: 100%;
+  color: #4a4a4a;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  height: 50px;
+  font-size: 13px;
+  padding: 0 10px;
+  font-weight: 400;
+  line-height: 150%;
+  box-sizing: border-box;
+}
+input:focus {
+  border-radius: 0;
+  outline: none;
+}
+
 .ambassador_container {
   display: flex;
   flex-direction: row;
