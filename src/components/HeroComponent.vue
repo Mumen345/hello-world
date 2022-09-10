@@ -6,10 +6,9 @@
         <span class="third_text">Community of </span>
         <span class="third_text">Friends and </span>
         <span class="third_text">Professionals</span> <br />
-        <span class="forth_text">on the go...</span>
       </p>
       <p class="hero_subtext">
-        We create a network that enables verified passengers to book empty seats in cars owned by verified drivers heading the same route while providing the affordability of a public bus and the comfort of a private car.
+        Your most secure, comfortable and affordable way to commute
       </p>
       <div class="button_div">
         <button class="primary_button">Download App</button>
