@@ -4,13 +4,13 @@
       <a class=""
         ><img alt="Hero Img" class="logo" src="@/assets/greach_logo.png"
       /></a>
-
       <div class="web">
         <a>How it works</a>
         <a class="middle_links">Download</a>
         <a>Contact Us</a>
       </div>
       <button class="nav_button web">Join Waitlist</button>
+
       <span
         class="mobile menu_btn"
         style="font-size: 30px; cursor: pointer"
@@ -147,6 +147,22 @@ a {
     font-size: 40px;
     top: 15px;
     right: 35px;
+  }
+  .nav_bar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 200px;
+    align-items: center;
+    padding: 20px 0;
+    background: #00000019;
+    backdrop-filter: blur(20px);
+    position: fixed;
+    z-index: 2;
+    transition: 0.5s ease all;
+    max-width: 1440px;
+    margin: 0 auto;
   }
 }
 </style>

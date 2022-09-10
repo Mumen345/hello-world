@@ -49,7 +49,7 @@
       <div class="accordion">
         <input type="radio" name="radio-a" id="check3" />
         <label class="accordion-label" for="check3"
-          >I'm new to GREACH, what do I do</label
+          >I'm new to GREACH, what do I do?</label
         >
         <div class="accordion-content">
           <p>

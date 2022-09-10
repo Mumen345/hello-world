@@ -22,30 +22,41 @@
                 </div> -->
       </div>
       <div class="footer_contact">
+        <br />
         <h3 class="contact_div_text">Contact</h3>
         <div class="contact_info">
-          <img alt="apple logo" src="@/assets/Frame1.svg" />
-          <a href="#"> (406) 555-0120</a>
-        </div>
-        <div class="contact_info">
           <img alt="apple logo" src="@/assets/email.svg" />
-          <a href="#"> help123@greach.co</a>
+          <a href="mailto:hello@greach.co"> hello@greach.co</a>
         </div>
         <div class="contact_info">
           <img alt="apple logo" src="@/assets/Frame3.svg" />
-          <a href="#"> 2972 Westheimer Rd. Santa Ana, Illinois 85486 </a>
+          <a href="#">Ikoyi, Lagos</a>
+        </div>
+        <div class="">
+          <a
+            href="https://m.facebook.com/story.php?story_fbid=110835595016172&substory_index=0&id=100082691964533"
+            target="_blank"
+          >
+            <img alt="apple logo" src="@/assets/facebook.svg" />
+          </a>
+          <a href="https://twitter.com/GreachRides" target="_blank">
+            <img alt="apple logo" src="@/assets/twitter.svg" />
+          </a>
+          <a
+            href="https://www.linkedin.com/company/greach-inc/"
+            target="_blank"
+          >
+            <img alt="apple logo" src="@/assets/linkedin.svg" />
+          </a>
+          <a href="https://www.instagram.com/greachrides/" target="_blank">
+            <img alt="apple logo" src="@/assets/instagram.svg" />
+          </a>
         </div>
       </div>
     </div>
     <hr class="line" />
     <div class="last_section">
       <img alt="apple logo" class="textc" src="@/assets/one.svg" />
-      <div class="">
-        <img alt="apple logo" src="@/assets/facebook.svg" />
-        <img alt="apple logo" src="@/assets/twitter.svg" />
-        <img alt="apple logo" src="@/assets/linkedin.svg" />
-        <img alt="apple logo" src="@/assets/instagram.svg" />
-      </div>
     </div>
   </footer>
 </template>

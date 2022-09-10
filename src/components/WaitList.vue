@@ -2,6 +2,7 @@
   <div class="waitlist_container">
     <div class="form">
       <p class="form_header">Join our Wait List</p>
+      <p class="form_subheader">Be the first to know when we go live</p>
       <form class="form_input" @submit.prevent="register">
         <div>
           <label for="name">*Name:</label>
@@ -146,8 +147,11 @@ export default {
 .form_header {
   text-align: center;
   color: white;
-  font-size: 25px;
+  font-size: 30px;
   font-weight: 600;
+  margin-bottom: 15px;
+}
+.form_subheader {
   margin-bottom: 30px;
 }
 input {
