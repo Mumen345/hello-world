@@ -59,10 +59,11 @@ export default {
         this.$toasted.error("Please fill your email");
         return false;
       }
-      if (this.email === this.validateEmail) {
+      if (!this.validateEmail(this.email)) {
         this.$toasted.error("Invalid email address");
         return false;
       }
+
       axios
         .post("https://jsonplaceholder.typicode.com/posts", this.email)
         .then((response) => {
