@@ -6,14 +6,14 @@
           <img alt="Hero Img" class="logo_img" src="@/assets/greach_logo.png" />
         </div>
         <p class="company_description">
-          Greach is a sustainability-driven mobility platform to ease employee
-          commuting problems through carpooling.
+          Greach is a sustainability-driven mobility platform that uses
+          carpooling to ease the commuting issues faced by working professionals
         </p>
         <p class="company_description">
-          Greach creates a network that enables verified passengers to book
-          empty seats in cars of verified drivers going the same route; while
-          providing the affordability of a public bus and the comfortability of
-          a private car.
+          We create a network that enables verified passengers to book empty
+          seats in cars owned by verified drivers heading the same route while
+          providing the affordability of a public bus and the comfort of a
+          private car.
         </p>
 
         <!-- <div class="download_link">
