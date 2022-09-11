@@ -65,10 +65,13 @@ export default {
       }
 
       axios
-        .post("https://jsonplaceholder.typicode.com/posts", this.email)
+        .get(
+          "http://3.85.252.84/docs#/waitlist/join_ambassador_list_api_v1_waitlist_ambassador_post",
+          this.email
+        )
         .then((response) => {
           console.log(response.status);
-          if (response.status === 201) {
+          if (response.status === 200) {
             this.$toasted.success("Success! Thank you for your Response");
             this.email = "";
           } else {
