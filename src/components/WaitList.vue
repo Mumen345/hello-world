@@ -86,7 +86,7 @@ export default {
           this.company
         )
         .then((response) => {
-          console.log(response.status);
+          // console.log(response.status);
           if (response.status === 200) {
             this.$toasted.success("Success! Thank you for your Response");
             (this.name = ""),
