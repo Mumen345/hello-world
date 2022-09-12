@@ -63,11 +63,11 @@ export default {
         this.$toasted.error("Invalid email address");
         return false;
       }
-
+      const params = "email="+this.email;
+      console.log(params);
       axios
-        .get(
-          "http://3.85.252.84/docs#/waitlist/join_ambassador_list_api_v1_waitlist_ambassador_post",
-          this.email
+        .post(
+          "http://3.85.252.84/api/v1/waitlist/ambassador?"+params
         )
         .then((response) => {
           // console.log(response.status);
