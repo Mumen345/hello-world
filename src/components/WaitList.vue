@@ -76,14 +76,15 @@ export default {
         this.$toasted.error("email not correct");
         return false;
       }
-
+      const requestBody = {
+         name: this.name,
+         email: this.email,
+         role: this.role.toLowerCase(),
+         company: this.company
+      };
       axios
-        .get(
-          "http://3.85.252.84/docs#/waitlist/add_to_waitlist_api_v1_waitlist__post",
-          this.name,
-          this.email,
-          this.role,
-          this.company
+        .post(
+          "http://3.85.252.84/api/v1/waitlist", requestBody
         )
         .then((response) => {
           // console.log(response.status);
