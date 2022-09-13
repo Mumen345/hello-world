@@ -42,8 +42,8 @@ export default {
     return {
       name: "",
       email: "",
-      company: "",
       role: "",
+      company: "",
     };
   },
   methods: {
@@ -76,17 +76,15 @@ export default {
         this.$toasted.error("email not correct");
         return false;
       }
-
+      const requestBody = {
+        name: this.name,
+        email: this.email,
+        role: this.role.toLowerCase(),
+        company: this.company,
+      };
       axios
-        .get(
-          "http://3.85.252.84/docs#/waitlist/add_to_waitlist_api_v1_waitlist__post",
-          this.name,
-          this.email,
-          this.role,
-          this.company
-        )
+        .post("http://3.85.252.84/api/v1/waitlist", requestBody)
         .then((response) => {
-          // console.log(response.status);
           if (response.status === 200) {
             this.$toasted.success("Success! Thank you for your Response");
             (this.name = ""),
@@ -94,7 +92,7 @@ export default {
               (this.role = ""),
               (this.company = "");
           } else {
-            this.$toasted.error("opps, an error occured. Try again");
+            this.$toasted.error("opps an error occurred");
             return false;
           }
         });

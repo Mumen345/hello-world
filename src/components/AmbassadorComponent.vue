@@ -63,19 +63,16 @@ export default {
         this.$toasted.error("Invalid email address");
         return false;
       }
-
+      const email = this.email;
       axios
-        .get(
-          "http://3.85.252.84/docs#/waitlist/join_ambassador_list_api_v1_waitlist_ambassador_post",
-          this.email
-        )
+        .post("http://3.85.252.84/api/v1/ambassador" + email)
         .then((response) => {
           // console.log(response.status);
           if (response.status === 200) {
             this.$toasted.success("Success! Thank you for your Response");
             this.email = "";
           } else {
-            this.$toasted.error("opps, an error occured. Try again");
+            this.$toasted.error("oops an error occurred");
             return false;
           }
         });
