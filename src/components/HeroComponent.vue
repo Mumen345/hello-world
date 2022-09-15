@@ -12,7 +12,12 @@
       </p>
       <div class="button_div">
         <button class="primary_button">Download App</button>
-        <button class="secondary_button">Join Waitlist</button>
+        <button
+          v-scroll-to="{ el: '#WaitList', onDone: onDone }"
+          class="secondary_button"
+        >
+          Join Waitlist
+        </button>
       </div>
       <!-- <div class="hero_stats">
             <div>
