@@ -84,6 +84,7 @@ export default {
       };
       axios
         .post("http://3.85.252.84/api/v1/waitlist", requestBody)
+
         .then((response) => {
           if (response.status === 200) {
             this.$toasted.success("Success! Thank you for your Response");

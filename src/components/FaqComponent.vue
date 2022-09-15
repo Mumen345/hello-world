@@ -17,7 +17,7 @@
       <div class="accordion">
         <input type="radio" name="radio-a" id="check2" />
         <label class="accordion-label" for="check2"
-          >How secure is my data?</label
+          >How secure am I using this App?</label
         >
         <div class="accordion-content">
           <p>
@@ -28,21 +28,6 @@
             safety feature (emergency button) whenever there is a perceived
             threat. Our process flow is designed to protect both parties in the
             case of a false alarm.
-          </p>
-        </div>
-      </div>
-      <div class="accordion">
-        <input type="radio" name="radio-a" id="check9" />
-        <label class="accordion-label" for="check9"
-          >How secure is this app?</label
-        >
-        <div class="accordion-content">
-          <p>
-            Greach assures all users of total security of the data stored on
-            their profiles during registration or update of their profile at any
-            point. Our highly secured system infrastructure has also been
-            optimized to ensure that no third-party infringement occurs on your
-            data..
           </p>
         </div>
       </div>
