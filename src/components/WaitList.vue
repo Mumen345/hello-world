@@ -92,9 +92,13 @@ export default {
               (this.email = ""),
               (this.role = ""),
               (this.company = "");
+          }
+        })
+        .catch((error) => {
+          if (error.response.status === 400) {
+            this.$toasted.error(error.response.data.detail);
           } else {
-            this.$toasted.error("opps an error occurred");
-            return false;
+            this.$toasted.error("An error occured. Please, try again later.");
           }
         });
     },

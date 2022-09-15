@@ -70,13 +70,17 @@ export default {
 
         .then((response) => {
           // console.log(response.status);
-          if (response.status === 200) {
+          if (response.status === 200 && response.data.status === "ok") {
             this.$toasted.success("Success! Thank you for your Response");
             this.email = "";
           } else {
             this.$toasted.error("oops an error occurred");
             return false;
           }
+        })
+        .catch((error) => {
+          console.log(error);
+          this.$toasted.error("An error occured. Please, try again later.");
         });
     },
     showInput() {
