@@ -3,17 +3,42 @@
     <div class="headersection">
       <div>
         <nav class="nav_bar">
-          <a @click="nav(link)" href="" class=""
+          <a
+            v-scroll-to="{ el: '#Hero', onDone: onDone, onCancel: onCancel }"
+            href="#"
+            class=""
             ><img alt="Hero Img" class="logo" src="@/assets/greach_logo.png"
           /></a>
           <div class="web">
-            <a @click="nav(link)" href="#HIW">How it works</a>
-            <a @click="nav(link)" href="#Amb" class="middle_links"
+            <a
+              v-scroll-to="{ el: '#HIW', onDone: onDone, onCancel: onCancel }"
+              href="#"
+              >How it works</a
+            >
+            <a
+              v-scroll-to="{ el: '#Amb', onDone: onDone, onCancel: onCancel }"
+              href="#"
+              class="middle_links"
               >Become an Ambassador</a
             >
-            <a @click="nav(link)" href="#FaqComponent">FAQ</a>
+            <a
+              v-scroll-to="{
+                el: '#FaqComponent',
+                onDone: onDone,
+              }"
+              href="#"
+              >FAQ</a
+            >
           </div>
-          <a href="#WaitList" class="nav_button web">Join Waitlist</a>
+          <a
+            v-scroll-to="{
+              el: '#WaitList',
+              onDone: onDone,
+            }"
+            href="#"
+            class="nav_button web"
+            >Join Waitlist</a
+          >
 
           <span
             class="mobile menu_btn"
@@ -26,15 +51,35 @@
           <div id="myNav" class="overlay">
             <a class="closebtn" @click.prevent="closeNav">&times;</a>
             <div class="overlay-content">
-              <a @click="nav(link)" href="#HIW">How it works</a>
-              <a @click="nav(link)" href="#Amb" class="middle_links"
+              <a v-scroll-to="{ el: '#HIW', onDone: onDone }" href="#"
+                >How it works</a
+              >
+              <a
+                v-scroll-to="{ el: '#Amb', onDone: onDone }"
+                href="#"
+                class="middle_links"
                 >Become an Ambassador</a
               >
-              <a @click="nav(link)" href="#FaqComponent">FAQ</a>
+              <a
+                v-scroll-to="{
+                  el: '#FaqComponent',
+                  onDone: onDone,
+                }"
+                href="#"
+                >FAQ</a
+              >
 
               <br />
               <br />
-              <a href="#WaitList" class="nav_button web">Join Waitlist</a>
+              <a
+                v-scroll-to="{
+                  el: '#WaitList',
+                  onDone: onDone,
+                }"
+                href="#"
+                class="nav_button web"
+                >Join Waitlist</a
+              >
             </div>
           </div>
         </div>
@@ -78,10 +123,15 @@ export default {
     closeNav() {
       document.getElementById("myNav").style.width = "0%";
     },
-    nav(link) {
-      const position = document.getElementById(link.id).offsetTop; // smooth scroll
-      window.scrollTo({ top: position, behavior: "smooth" });
+    onDone() {
+      this.closeNav();
     },
+
+    // nav(link) {
+    //   const position = document.getElementById(link.id).offsetTop; // smooth scroll
+    //   window.scrollTo({ top: position, behavior: "smooth" });
+    //
+    // },
   },
 };
 </script>
@@ -196,6 +246,9 @@ a {
     font-size: 40px;
     top: 15px;
     right: 35px;
+  }
+  .nav_button {
+    width: 70%;
   }
   .nav_bar {
     width: 100%;

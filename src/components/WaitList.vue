@@ -86,6 +86,10 @@ export default {
         .post("http://3.85.252.84/api/v1/waitlist", requestBody)
 
         .then((response) => {
+          if (response.status === 400) {
+            this.$toasted.error("Email already taken");
+            return false;
+          }
           if (response.status === 200) {
             this.$toasted.success("Success! Thank you for your Response");
             (this.name = ""),

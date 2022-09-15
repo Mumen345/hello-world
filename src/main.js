@@ -5,6 +5,10 @@ import { MotionPlugin } from '@vueuse/motion'
 import axios from 'axios'
 import Vuelidate from 'vuelidate'
 import { vfmPlugin } from 'vue-final-modal'
+// var Vue = require('vue');
+var VueScrollTo = require('vue-scrollto');
+
+Vue.use(VueScrollTo)
 
 Vue.use(vfmPlugin)
 Vue.use(Vuelidate)
