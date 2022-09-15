@@ -3,7 +3,7 @@
     <div class="form">
       <p class="form_header">Join our Wait List</p>
       <p class="form_subheader">Be the first to know when we go live</p>
-      <form class="form_input" @submit.prevent="register">
+      <form class="form_input">
         <div>
           <label for="name">*Name:</label>
           <br />
@@ -86,10 +86,6 @@ export default {
         .post("http://3.85.252.84/api/v1/waitlist", requestBody)
 
         .then((response) => {
-          if (response.status === 400) {
-            this.$toasted.error("Email already taken");
-            return false;
-          }
           if (response.status === 200) {
             this.$toasted.success("Success! Thank you for your Response");
             (this.name = ""),
@@ -101,9 +97,6 @@ export default {
             return false;
           }
         });
-    },
-    register() {
-      this.errors = {};
     },
   },
 };
